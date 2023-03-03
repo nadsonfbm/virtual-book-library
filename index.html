@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+        <script src="https://kit.fontawesome.com/90d23de173.js" crossorigin="anonymous"></script>
+        <title>Nadson Mendes - My Virtual Book Library</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <!-- Header section -->
+        <header>
+            <nav class="header-nav">
+                <div class="logo-container">
+                    <img class="logo-img" src="./images/book-logo.jpg" alt="logo">
+                    <h1 class="logo-title">My Library</h1>
+                </div>
+                <button class="new-book-btn">+</button>
+            </nav>
+          </header>
+        <!-- Main content section -->
+        <main class="main-container">
+            <section class="row">
+                <div class="status-bar">
+                    <!-- Order section -->
+                    <div class="order-section">
+                        <label for="order-by">Order By:
+                            <select name="order-by" id="order-by">
+                                <option value="insertion-date" selected>Insertion Date</option>
+                                <option value="publishing-date">Publishing Date</option>
+                            </select>
+                            <select name="order" id="order">
+                                <option value="ascending">Ascending</option>
+                                <option value="descending" selected>Descending</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Read/Unread section -->
+                    <div class="map-section">
+                        <div class="read-color">
+                            <p>Read</p>
+                        </div>
+                        <div class="unread-color">
+                            <p>Unread</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="full-table">
+                <table id="book-table">
+                    <td class="book-card">
+                        <div class="book-info">
+                            <h3 class="book-title">The Catcher in the Rye</h3>
+                            <p class="book-author">J.D. Salinger</p>
+                            <p class="book-pages">277</p>
+                            <p class="book-language">English</p>
+                            <p class="book-pub-date">July 16, 1951</p>
+                            <p class="book-read-status">Read</p>
+                        </div>
+                        <div class="book-buttons">
+                            <button class="read-button">Read/Unread</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </td>
+                    <td class="book-card">
+                        <div class="book-info">
+                            <h3 class="book-title">To Kill a Mockingbird</h3>
+                            <p class="book-author">Harper Lee</p>
+                            <p class="book-pages">281</p>
+                            <p class="book-language">English</p>
+                            <p class="book-pub-date">July 11, 1960</p>
+                            <p class="book-read-status">Unread</p>
+                        </div>
+                        <div class="book-buttons">
+                            <button class="read-button">Read/Unread</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </td>
+                </table>
+            </section>
+        </main>
+        <!-- Add new book form -->
+        <section class="add-new-book-section">
+            <div class="new-book-form">
+                <h2 class="form-title">Add New Book</h2>
+                <span class="material-icons close-form">close</span>
+                <form id="new-book-form">
+                    <div class="form-group">
+                        <label for="book-title">Book Title *</label>
+                        <input class="form-control" type="text" name="title" id="book-title" placeholder="Title" autocomplete="on" required>
+                        <small class="err-msg">* Book Title is Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Book Author *</label>
+                        <input class="form-control" type="text" name="author" id="book-author" placeholder="Author" autocomplete="on" required>
+                        <small class="err-msg">* Book Author is Required!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="number-of-pages">Number of Pages *</label>                    
+                        <input class="form-control" type="number" name="pages-count" id="number-of-pages" placeholder="Number of Pages" autocomplete="on" required>
+                        <small class="err-msg">* Number of Book's Pages is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-language">Book's Language*</label>
+                        <input class="form-control" type="text" name="language" id="book-language" placeholder="Language" autocomplete="on" required>
+                        <small class="err-msg">* Book's Language is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-pub-date">Publishing Date*</label>
+                        <input class="form-control" type="date" name="pub-date" id="book-pub-date" autocomplete="on" required>
+                        <small class="err-msg">* Book's Publishing Date is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-read-status">Book's Reading Status*</label>
+                        <select class="form-control" name="status" id="book-read-status" autocomplete="on" required>
+                            <option value="" disabled selected>Have you Read This Book?</option>
+                            <option value="true">Yes, I Have Already Read It</option>
+                            <option value="false">No, I Still Have to Read It</option>
+                        </select>
+                        <small class="err-msg">* Status is Required</small>
+                    </div>
+                    <div class="new-book-buttons">
+                        <button type="submit" class="add-book-button"><i class=""></i> Add Book</button>
+                        <button type="reset" class="button-clear">Clear All Fields</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer section -->
+        <footer>
+            <div class="footer_columns">
+                <div class="column">
+                    <h2>Library Log</h2>
+                    <div class="total_books">
+                        <h3>Total Books Count:</h3>
+                        <span id="books_count"></span>
+                        <i class="fa-brands fa-book"></i>
+                    </div>
+                    <div class="total_read">
+                        <h3>Read:</h3>
+                        <span id="read_b_count"></span>
+                        <i class="fa-brands fa-envelope"></i>
+                    </div>
+                    <div class="not_read">
+                        <h3>Not read:</h3>
+                        <span id="not_read_b_count"></span>
+                        <i class="fa-brands fa-file-text"></i>
+                    </div>
+                </div>
+                <div class="column">
+                    <p>All rights reserved © 2023. Crafted by nadsonfbm.</p>
+                </div>
+                <div class="column">
+                    <p>Social Media</p>
+                    <ul class="social-media-list">
+                        <li>
+                            <a href="https://www.linkedin.com/in/nadson-mendes/" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.github.com/nadsonfbm/" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/nadsonfbm/" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/nadsonfbm/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/nadsonfanckin/" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>Dark Mode Themes:</p>
+                    <select class="theme-selector">
+                        <option value="dark-mode">Dark Mode</option>
+                        <option value="dark-yellow">Dark Yellow</option>
+                        <option value="dark-orange">Dark Orange</option>
+                        <option value="dark-red">Dark Red</option>
+                        <option value="dark-purple">Dark Purple</option>
+                    </select>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
