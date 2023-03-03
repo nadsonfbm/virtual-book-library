@@ -14,13 +14,11 @@
         <!-- Header section -->
         <header>
             <nav class="header-nav">
-                <div class="logo-container">
-                    <img class="logo-img" src="./images/book-logo.jpg" alt="logo">
-                    <h1 class="logo-title">My Library</h1>
-                </div>
+                <img class="logo-img" src="./images/book-logo.png" alt="logo">
+                <h1 class="logo-title">My Virtual Book Library</h1>
                 <button class="new-book-btn">+</button>
             </nav>
-          </header>
+        </header>
         <!-- Main content section -->
         <main class="main-container">
             <section class="row">
@@ -31,6 +29,10 @@
                             <select name="order-by" id="order-by">
                                 <option value="insertion-date" selected>Insertion Date</option>
                                 <option value="publishing-date">Publishing Date</option>
+                                <option value="title">Title</option>
+                                <option value="author">Author</option>
+                                <option value="pages">Pages</option>
+                                <option value="language">Language</option>
                             </select>
                             <select name="order" id="order">
                                 <option value="ascending">Ascending</option>
@@ -49,38 +51,71 @@
                     </div>
                 </div>
             </section>
-            <section class="full-table">
-                <table id="book-table">
-                    <td class="book-card">
+            <table id="book-table">
+                <div class="book-container">
+                    <td class="book-card" data-index="${index}">
                         <div class="book-info">
-                            <h3 class="book-title">The Catcher in the Rye</h3>
-                            <p class="book-author">J.D. Salinger</p>
-                            <p class="book-pages">277</p>
-                            <p class="book-language">English</p>
-                            <p class="book-pub-date">July 16, 1951</p>
-                            <p class="book-read-status">Read</p>
+                            <div>
+                                <h3 class="book-title">One Hundred Years of Solitude</h3>
+                                <p class="book-author">Gabriel Garcia Marquez</p>
+                                <p class="book-pages">417</p>
+                                <p class="book-language">Spanish</p>
+                                <p class="book-pub-date">May 30, 1967</p>
+                                <p class="book-read-status">Unread</p>
+                            </div>
                         </div>
                         <div class="book-buttons">
-                            <button class="read-button">Read/Unread</button>
+                            <label class="switch">
+                                <input type="checkbox" class="read-status">
+                                <span class="slider round"></span>
+                            </label>
+                            <button class="edit-button">Edit</button>
                             <button class="delete-button">Delete</button>
                         </div>
                     </td>
-                    <td class="book-card">
+                    <td class="book-card" data-index="${index}">
                         <div class="book-info">
-                            <h3 class="book-title">To Kill a Mockingbird</h3>
-                            <p class="book-author">Harper Lee</p>
-                            <p class="book-pages">281</p>
-                            <p class="book-language">English</p>
-                            <p class="book-pub-date">July 11, 1960</p>
-                            <p class="book-read-status">Unread</p>
+                            <div>
+                                <h3 class="book-title">The Hitchhiker's Guide to the Galaxy</h3>
+                                <p class="book-author">Douglas Adams</p>
+                                <p class="book-pages">193</p>
+                                <p class="book-language">English</p>
+                                <p class="book-pub-date">October 12, 1979</p>
+                                <p class="book-read-status">Read</p>
+                            </div>
                         </div>
                         <div class="book-buttons">
-                            <button class="read-button">Read/Unread</button>
+                            <label class="switch">
+                                <input type="checkbox" class="read-status">
+                                <span class="slider round"></span>
+                            </label>
+                            <button class="edit-button">Edit</button>
                             <button class="delete-button">Delete</button>
                         </div>
                     </td>
-                </table>
-            </section>
+                    <td class="book-card" data-index="${index}">
+                        <div class="book-info">
+                            <div>
+                                <h3 class="book-title">The Lord of the Rings</h3>
+                                <p class="book-author">J.R.R. Tolkien</p>
+                                <p class="book-pages">1178</p>
+                                <p class="book-language">English</p>
+                                <p class="book-pub-date">July 29, 1954</p>
+                                <p class="book-read-status">Unread</p>
+                            </div>
+                        </div>
+                        <div class="book-buttons">
+                            <label class="switch">
+                                <input type="checkbox" class="read-status">
+                                <span class="slider round"></span>
+                            </label>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </div>
+                    </td>
+                    
+                </div>
+            </table>
         </main>
         <!-- Add new book form -->
         <section class="add-new-book-section">
@@ -134,24 +169,26 @@
             <div class="footer_columns">
                 <div class="column">
                     <h2>Library Log</h2>
-                    <div class="total_books">
-                        <h3>Total Books Count:</h3>
-                        <span id="books_count"></span>
-                        <i class="fa-brands fa-book"></i>
-                    </div>
-                    <div class="total_read">
-                        <h3>Read:</h3>
-                        <span id="read_b_count"></span>
-                        <i class="fa-brands fa-envelope"></i>
-                    </div>
-                    <div class="not_read">
-                        <h3>Not read:</h3>
-                        <span id="not_read_b_count"></span>
-                        <i class="fa-brands fa-file-text"></i>
-                    </div>
-                </div>
+                    <ul>
+                        <li class="total_books">
+                            <h3>Total Books Count: 0</h3>
+                            <span id="books_count"></span>
+                            <i class="fa-brands fa-book"></i>
+                        </li>
+                        <li class="total_read">
+                            <h3>Read: 0</h3>
+                            <span id="read_b_count"></span>
+                            <i class="fa-brands fa-check"></i>
+                        </li>
+                        <li class="not_read">
+                            <h3>Unread: 0</h3>
+                            <span id="not_read_b_count"></span>
+                            <i class="fa-brands fa-times"></i>
+                        </li>
+                    </ul>
                 <div class="column">
-                    <p>All rights reserved © 2023. Crafted by nadsonfbm.</p>
+                    <p>All rights reserved © 2023.</p>
+                    <p>Crafted by nadsonfbm.</p>
                 </div>
                 <div class="column">
                     <p>Social Media</p>
@@ -184,7 +221,7 @@
                     </ul>
                 </div>
                 <div class="column">
-                    <p>Dark Mode Themes:</p>
+                    <p>Themes:</p>
                     <select class="theme-selector">
                         <option value="dark-mode">Dark Mode</option>
                         <option value="dark-yellow">Dark Yellow</option>
