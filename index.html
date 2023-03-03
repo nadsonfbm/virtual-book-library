@@ -14,107 +14,106 @@
         <!-- Header section -->
         <header>
             <nav class="header-nav">
-                <img class="logo-img" src="./images/book-logo.png" alt="logo">
                 <h1 class="logo-title">My Virtual Book Library</h1>
                 <button class="new-book-btn">+</button>
             </nav>
         </header>
         <!-- Main content section -->
         <main class="main-container">
-            <section class="row">
-                <div class="status-bar">
-                    <!-- Order section -->
-                    <div class="order-section">
-                        <label for="order-by">Order By:
-                            <select name="order-by" id="order-by">
-                                <option value="insertion-date" selected>Insertion Date</option>
-                                <option value="publishing-date">Publishing Date</option>
-                                <option value="title">Title</option>
-                                <option value="author">Author</option>
-                                <option value="pages">Pages</option>
-                                <option value="language">Language</option>
-                            </select>
-                            <select name="order" id="order">
-                                <option value="ascending">Ascending</option>
-                                <option value="descending" selected>Descending</option>
-                            </select>
-                        </label>
-                    </div>
-                    <!-- Read/Unread section -->
-                    <div class="map-section">
-                        <div class="read-color">
-                            <p>Read</p>
-                        </div>
-                        <div class="unread-color">
-                            <p>Unread</p>
-                        </div>
-                    </div>
+            <section class="status-bar row">
+                <div class="order-section">
+                    <label for="order-by">Order By:
+                        <select name="order-by" id="order-by">
+                            <option value="insertion-date" selected>Insertion Date</option>
+                            <option value="publishing-date">Publishing Date</option>
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="pages">Pages</option>
+                            <option value="language">Language</option>
+                        </select>
+                        <select name="order" id="order">
+                            <option value="ascending">Ascending</option>
+                            <option value="descending" selected>Descending</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="map-section">
+                    <div class="read-color">Read</div>
+                    <div class="unread-color">Unread</div>
                 </div>
             </section>
-            <table id="book-table">
-                <div class="book-container">
-                    <td class="book-card" data-index="${index}">
-                        <div class="book-info">
-                            <div>
-                                <h3 class="book-title">One Hundred Years of Solitude</h3>
-                                <p class="book-author">Gabriel Garcia Marquez</p>
-                                <p class="book-pages">417</p>
-                                <p class="book-language">Spanish</p>
-                                <p class="book-pub-date">May 30, 1967</p>
-                                <p class="book-read-status">Unread</p>
-                            </div>
-                        </div>
-                        <div class="book-buttons">
-                            <label class="switch">
-                                <input type="checkbox" class="read-status">
-                                <span class="slider round"></span>
-                            </label>
-                            <button class="edit-button">Edit</button>
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                    <td class="book-card" data-index="${index}">
-                        <div class="book-info">
-                            <div>
-                                <h3 class="book-title">The Hitchhiker's Guide to the Galaxy</h3>
-                                <p class="book-author">Douglas Adams</p>
-                                <p class="book-pages">193</p>
-                                <p class="book-language">English</p>
-                                <p class="book-pub-date">October 12, 1979</p>
-                                <p class="book-read-status">Read</p>
-                            </div>
-                        </div>
-                        <div class="book-buttons">
-                            <label class="switch">
-                                <input type="checkbox" class="read-status">
-                                <span class="slider round"></span>
-                            </label>
-                            <button class="edit-button">Edit</button>
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                    <td class="book-card" data-index="${index}">
-                        <div class="book-info">
-                            <div>
-                                <h3 class="book-title">The Lord of the Rings</h3>
-                                <p class="book-author">J.R.R. Tolkien</p>
-                                <p class="book-pages">1178</p>
-                                <p class="book-language">English</p>
-                                <p class="book-pub-date">July 29, 1954</p>
-                                <p class="book-read-status">Unread</p>
-                            </div>
-                        </div>
-                        <div class="book-buttons">
-                            <label class="switch">
-                                <input type="checkbox" class="read-status">
-                                <span class="slider round"></span>
-                            </label>
-                            <button class="edit-button">Edit</button>
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                    
-                </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Language</th>
+                        <th>Publication Date</th>
+                        <th>Read Status</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>One Hundred Years of Solitude</td>
+                        <td>Gabriel Garcia Marquez</td>
+                        <td>417</td>
+                        <td>Spanish</td>
+                        <td>May 30, 1967</td>
+                        <td>
+                        <label>
+                            <input type="checkbox" name="read-status">
+                            <span class="slider round"></span>
+                        </label>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>The Hitchhiker's Guide to the Galaxy</td>
+                        <td>Douglas Adams</td>
+                        <td>193</td>
+                        <td>English</td>
+                        <td>October 12, 1979</td>
+                        <td>
+                        <label>
+                            <input type="checkbox" name="read-status">
+                            <span class="slider round"></span>
+                        </label>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>The Lord of the Rings</td>
+                        <td>J.R.R. Tolkien</td>
+                        <td>1178</td>
+                        <td>English</td>
+                        <td>July 29, 1954</td>
+                        <td>
+                        <label>
+                            <input type="checkbox" name="read-status">
+                            <span class="slider round"></span>
+                        </label>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </main>
         <!-- Add new book form -->
@@ -130,17 +129,17 @@
                     </div>
                     <div class="form-group">
                         <label for="book-author">Book Author *</label>
-                        <input class="form-control" type="text" name="author" id="book-author" placeholder="Author" autocomplete="on" required>
+                        <input class="form-control" type="text" name="author" id="book-author" placeholder="Author" autocomplete="on" required pattern="[a-zA-Z]+" title="Only letters are allowed">
                         <small class="err-msg">* Book Author is Required!</small>
                     </div>
                     <div class="form-group">
                         <label for="number-of-pages">Number of Pages *</label>                    
-                        <input class="form-control" type="number" name="pages-count" id="number-of-pages" placeholder="Number of Pages" autocomplete="on" required>
+                        <input class="form-control" type="number" name="pages-count" id="number-of-pages" placeholder="Number of Pages" autocomplete="on" required min="1">
                         <small class="err-msg">* Number of Book's Pages is Required</small>
                     </div>
                     <div class="form-group">
                         <label for="book-language">Book's Language*</label>
-                        <input class="form-control" type="text" name="language" id="book-language" placeholder="Language" autocomplete="on" required>
+                        <input class="form-control" type="text" name="language" id="book-language" placeholder="Language" autocomplete="on" required pattern="[a-zA-Z]+" title="Only letters are allowed">
                         <small class="err-msg">* Book's Language is Required</small>
                     </div>
                     <div class="form-group">
@@ -166,63 +165,45 @@
         </section>
         <!-- Footer section -->
         <footer>
-            <div class="footer_columns">
-                <div class="column">
-                    <h2>Library Log</h2>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Library Log</h3>
                     <ul>
-                        <li class="total_books">
-                            <h3>Total Books Count: 0</h3>
-                            <span id="books_count"></span>
-                            <i class="fa-brands fa-book"></i>
-                        </li>
-                        <li class="total_read">
-                            <h3>Read: 0</h3>
-                            <span id="read_b_count"></span>
-                            <i class="fa-brands fa-check"></i>
-                        </li>
-                        <li class="not_read">
-                            <h3>Unread: 0</h3>
-                            <span id="not_read_b_count"></span>
-                            <i class="fa-brands fa-times"></i>
-                        </li>
+                    <li>
+                        <span>Total Books Count:</span>
+                        <span id="books_count">0</span>
+                        <i class="fa-brands fa-book"></i>
+                    </li>
+                    <li>
+                        <span>Read:</span>
+                        <span id="read_b_count">0</span>
+                        <i class="fa-brands fa-check"></i>
+                    </li>
+                    <li>
+                        <span>Unread:</span>
+                        <span id="not_read_b_count">0</span>
+                        <i class="fa-brands fa-times"></i>
+                    </li>
                     </ul>
-                <div class="column">
-                    <p>All rights reserved © 2023.</p>
+                </div>
+                <div class="footer-column">
+                    <p>All rights reserved © 2023.</p> 
                     <p>Crafted by nadsonfbm.</p>
                 </div>
-                <div class="column">
-                    <p>Social Media</p>
+                <div class="footer-column">
+                    <h3>Social Media</h3>
                     <ul class="social-media-list">
-                        <li>
-                            <a href="https://www.linkedin.com/in/nadson-mendes/" target="_blank">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.github.com/nadsonfbm/" target="_blank">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.twitter.com/nadsonfbm/" target="_blank">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/nadsonfbm/" target="_blank">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/nadsonfanckin/" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
-                        </li>
+                        <li><a href="https://www.linkedin.com/in/nadson-mendes/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://www.github.com/nadsonfbm/" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="https://www.twitter.com/nadsonfbm/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/nadsonfbm/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/nadsonfanckin/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                     </ul>
                 </div>
-                <div class="column">
-                    <p>Themes:</p>
+                <div class="footer-column">
+                    <h3>Themes</h3>
                     <select class="theme-selector">
+                        <option value="standard-mode">Standard</option>
                         <option value="dark-mode">Dark Mode</option>
                         <option value="dark-yellow">Dark Yellow</option>
                         <option value="dark-orange">Dark Orange</option>
