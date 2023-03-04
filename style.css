@@ -197,7 +197,7 @@ input[type="checkbox"] + .slider.round:before {
 input[type="checkbox"]:checked + .slider.round:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
-  transform: translateX(20px);
+  transform: translateX(19px);
   background-color: rgb(242, 67, 67);
   border-radius: 34px;
   height: 100%;
@@ -312,6 +312,7 @@ select.form-control {
   justify-content: center;
   align-items: center;
   z-index: 2;
+
 }
 
 .new-book-form {
@@ -349,17 +350,15 @@ select.form-control {
 
 footer {
   background-color: rgb(146, 145, 145);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  right: 0;
-  padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   font-size: 100%;
+  border-top: #000000 solid 2px;
+  min-height: 10vh;
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer-columns {

@@ -11,14 +11,12 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <!-- Header section -->
         <header>
             <nav class="header-nav">
                 <h1 class="logo-title">My Virtual Book Library</h1>
                 <button class="new-book-btn">+</button>
             </nav>
         </header>
-        <!-- Main content section -->
         <main class="main-container">
             <section class="status-bar row">
                 <div class="order-section">
@@ -64,7 +62,7 @@
                         <td>May 30, 1967</td>
                         <td>
                         <label>
-                            <input type="checkbox" name="read-status">
+                            <input type="checkbox" name="read-status" id="book-read-status">
                             <span class="slider round"></span>
                         </label>
                         </td>
@@ -83,7 +81,7 @@
                         <td>October 12, 1979</td>
                         <td>
                         <label>
-                            <input type="checkbox" name="read-status">
+                            <input type="checkbox" name="read-status" id="book-read-status">
                             <span class="slider round"></span>
                         </label>
                         </td>
@@ -102,7 +100,7 @@
                         <td>July 29, 1954</td>
                         <td>
                         <label>
-                            <input type="checkbox" name="read-status">
+                            <input type="checkbox" name="read-status" id="book-read-status">
                             <span class="slider round"></span>
                         </label>
                         </td>
@@ -116,7 +114,6 @@
                 </tbody>
             </table>
         </main>
-        <!-- Add new book form -->
         <section class="add-new-book-section">
             <div class="new-book-form">
                 <h2 class="form-title">Add New Book</h2>
@@ -157,13 +154,12 @@
                         <small class="err-msg">* Status is Required</small>
                     </div>
                     <div class="new-book-buttons">
-                        <button type="submit" class="add-book-button"><i class=""></i> Add Book</button>
+                        <button type="submit" id="add-book-button" class="add-book-button"><span class="add-book-btn">Add Book</span></button>
                         <button type="reset" class="button-clear">Clear All Fields</button>
                     </div>
                 </form>
             </div>
         </section>
-        <!-- Footer section -->
         <footer>
             <div class="footer-columns">
                 <div class="footer-column">
@@ -203,7 +199,7 @@
                 <div class="footer-column">
                     <h3>Themes</h3>
                     <select class="theme-selector">
-                        <option value="standard-mode">Standard</option>
+                        <option value="standard-mode">Standard Mode</option>
                         <option value="dark-mode">Dark Mode</option>
                         <option value="dark-yellow">Dark Yellow</option>
                         <option value="dark-orange">Dark Orange</option>
